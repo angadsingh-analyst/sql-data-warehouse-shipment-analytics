@@ -1,0 +1,3 @@
+Oracle Database or Oracle APEX
+Oracle SQL Workshop or SQL Developer
+SQL knowledge: joins, aggregations, date functions, constraints, ranking queries
