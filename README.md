@@ -1,60 +1,106 @@
 # SQL Data Warehouse and Shipment Analytics
 
+This project develops and analyses a small dimensional data warehouse using Oracle SQL. It demonstrates star schema design, table creation, data population, primary and foreign key constraints, SQL querying and analytical reporting for shipment performance.
+
+The project is designed as a portfolio example of SQL-based business intelligence and data warehousing.
+
+---
+
 ## Project Overview
 
-This project builds a small Oracle SQL data warehouse for shipment analytics using a dimensional modelling approach. It demonstrates how fact and dimension tables can be designed, populated, constrained and queried to answer business questions about shipment volume, shipment value, product performance, shipper performance and customer value.
+A data warehouse enables organisations to structure operational data for reporting and decision-making. This project focuses on shipment analytics, where shipment records are modelled using a fact table and supporting dimension tables.
 
-The project was originally developed as a Business Intelligence and Analytics coursework task. This repository is a cleaned portfolio version with personal identifiers, assignment cover sheets and private submission material removed.
+The warehouse supports analysis of shipments by customer, product, date and shipping company. Analytical SQL queries are then used to answer business questions such as identifying top shippers, monthly shipment values, high-value products and valuable customers.
 
-## Business Problem
+---
 
-The business requires a structured data warehouse to analyse shipment activity across customers, products, shippers and dates. The model supports questions such as:
+## Objectives
 
-- Which shipper completed the most shipments in 2024?
-- What was the monthly shipment value in 2024?
-- Which product generated the highest shipment value in May 2024?
-- Which shipper performed best by month?
-- Which customer generated the highest shipment value?
+- Design a dimensional data warehouse using a star schema
+- Create customer, product, shipper and date dimensions
+- Create a shipment fact table
+- Add primary and foreign key constraints
+- Populate the warehouse with sample shipment data
+- Run analytical SQL queries for business insights
+- Document the schema, logic and query outputs
+
+---
 
 ## Data Warehouse Design
 
-The warehouse follows a star-schema structure:
+The project uses a star schema with one central fact table and four dimension tables.
 
-- `SHIP_FACT` - shipment-level fact table
-- `DIM_CUSTOMER` - customer dimension
-- `DIM_PRODUCT` - product dimension
-- `DIM_SHIPPER` - shipper dimension
-- `DIM_DATE` - date dimension
+### Fact Table
 
-The fact table uses shipment-level grain: each row represents one product shipment to one customer on one date through one shipper.
+```text
+SHIP_FACT
+```
+
+The shipment fact table captures shipment-level measures such as:
+
+- Shipment ID
+- Date ID
+- Customer ID
+- Product ID
+- Shipper ID
+- Quantity
+- Shipment weight
+- Shipping cost
+
+### Dimension Tables
+
+```text
+DIM_CUSTOMER
+DIM_PRODUCT
+DIM_DATE
+DIM_SHIPPER
+```
+
+These dimensions provide descriptive context for analysing shipments by customer, product, date and shipper.
+
+---
 
 ## Methods
 
-- Created dimension and fact tables in Oracle SQL.
-- Populated lookup dimensions and generated shipment facts.
-- Added product names and sample business records.
-- Added primary key and foreign key constraints.
-- Wrote analytical SQL queries using joins, aggregation, date extraction, ordering and ranking.
-- Prepared a clean report summarising the design, SQL logic and key outputs.
+The workflow included:
 
-## Key Outputs
+- Creating dimension tables
+- Creating the shipment fact table
+- Populating tables with sample data
+- Adding product names and enrichment fields
+- Applying primary key constraints
+- Applying foreign key constraints between fact and dimension tables
+- Writing SQL queries to answer analytical business questions
+- Summarising the query logic and results in a report
 
-- Dimensional model for shipment analytics.
-- Oracle SQL schema creation and population scripts.
-- Constraint and enrichment script for warehouse integrity.
-- Analytical query script for shipment performance reporting.
-- Clean portfolio report documenting the project.
+---
 
-## Tools and Skills
+## Example Business Questions
+
+The SQL analysis answers questions such as:
+
+- Which shipping company completed the most shipments in 2024?
+- What was the total shipment value by month?
+- Which product generated the highest shipment value in May 2024?
+- Which shipping company performed best in each month?
+- Who was the most valuable customer in 2024?
+
+---
+
+## Skills Demonstrated
 
 - Oracle SQL
-- Oracle APEX / SQL Workshop
-- Data warehousing
+- Data warehouse design
 - Dimensional modelling
 - Star schema design
+- Fact and dimension tables
 - Primary and foreign key constraints
-- Analytical SQL queries
+- SQL joins
+- Aggregation queries
+- Date-based filtering
 - Business intelligence reporting
+
+---
 
 ## Repository Structure
 
@@ -73,15 +119,49 @@ The fact table uses shipment-level grain: each row represents one product shipme
     └── Data_Warehouse_SQL_Analysis_Report_Clean.pdf
 ```
 
+---
+
 ## How to Run
 
-1. Open Oracle APEX SQL Workshop or another Oracle SQL environment.
-2. Run `sql/01_create_and_populate_warehouse.sql`.
-3. Run `sql/02_constraints_and_enrichment.sql`.
-4. Run selected queries from `sql/03_analysis_queries.sql`.
+Run the SQL scripts in order using Oracle SQL Developer, Oracle APEX SQL Workshop or another Oracle-compatible SQL environment.
 
-The scripts are intended for Oracle SQL. Some syntax, such as identity columns, `CONNECT BY`, `DBMS_RANDOM`, `FETCH FIRST`, and `EXTRACT`, is Oracle-specific.
+```text
+1. sql/01_create_and_populate_warehouse.sql
+2. sql/02_constraints_and_enrichment.sql
+3. sql/03_analysis_queries.sql
+```
+
+The first script creates and populates the warehouse.  
+The second script applies constraints and enrichment updates.  
+The third script runs the analytical queries.
+
+---
+
+## Tools
+
+- Oracle SQL
+- Oracle APEX
+- SQL Developer
+- Microsoft Word
+
+---
+
+## Data Availability
+
+This repository includes a cleaned Oracle SQL data warehouse project with table creation scripts, constraint scripts and analytical queries.
+
+Assignment cover pages, student identifiers and submission-specific materials have been removed.
+
+---
 
 ## Portfolio Note
 
-This repository is a cleaned portfolio version. Personal identifiers, assignment cover sheets, AI declaration text, screenshots containing private schema details and submission-style filenames have been excluded.
+This repository is shared as a public portfolio example of SQL data warehousing, dimensional modelling and analytical querying for business intelligence.
+
+---
+
+## Author
+
+Angad Singh  
+Master of Predictive Analytics  
+Perth, Western Australia
