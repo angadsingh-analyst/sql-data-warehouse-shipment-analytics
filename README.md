@@ -66,7 +66,7 @@ The workflow included:
 
 - Creating dimension tables
 - Creating the shipment fact table
-- Populating tables with sample data
+- Populating tables with sample shipment data
 - Adding product names and enrichment fields
 - Applying primary key constraints
 - Applying foreign key constraints between fact and dimension tables
