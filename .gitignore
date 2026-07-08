@@ -1,0 +1,27 @@
+# macOS system files
+.DS_Store
+__MACOSX/
+
+# Temporary files
+*.tmp
+*.log
+*.bak
+~$*
+
+# Oracle / SQL tool exports and local files
+*.dmp
+*.exp
+*.trc
+*.ora
+*.dbf
+*.ctl
+
+# Local database files
+*.sqlite
+*.sqlite3
+*.db
+
+# Local/private folders
+.cache/
+.temp/
+tmp/
